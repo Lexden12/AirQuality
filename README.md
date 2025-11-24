@@ -4,6 +4,8 @@ The goal of this project is to build an air quality meter for use in the home.
 
 The details of this project can be found on my [website](https://lexden.dev/projects/airquality).
 
+The firmware for this project is implemented in Arduino running on an ESP32C3.
+
 This repo will focus exclusively on the firmware for this project and how to use it.
 
 ### Usage
