@@ -1,0 +1,31 @@
+AirQuality
+Copyright (c) 2025 Alex "Lexden" Schendel
+
+This project uses the following third-party software. Copyright and
+license terms for each project are owned by their respective authors
+and contributors; please consult each project's website or repository
+for the full license text.
+
+Adafruit SSD1325 Library
+- Copyright (c) 2015, Adafruit Industries
+- https://github.com/adafruit/Adafruit_SSD1325_Library
+
+ESPDateTime
+- Copyright (c) 2019-2021, Zhang Xiaoke (github@mcxiaoke.com)
+- https://github.com/mcxiaoke/ESPDateTime
+
+Sensirion I2C SGP41 Arduino Library
+- Copyright (c) 2021, Sensirion AG
+- https://github.com/Sensirion/arduino-i2c-sgp41
+
+Sensirion I²C SCD4X Arduino Library
+- Copyright (c) 2025, Sensirion AG
+- https://github.com/Sensirion/arduino-i2c-scd4x
+
+Adafruit LPS2X
+- Copyright (c) 2019 Bryan Siepert for Adafruit Industries
+- https://github.com/adafruit/Adafruit_LPS2X
+
+Adafruit Unified Sensor Driver
+- Copyright (C) 2013 Adafruit Industries
+- https://github.com/adafruit/Adafruit_Sensor
