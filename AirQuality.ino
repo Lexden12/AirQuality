@@ -53,6 +53,7 @@ sensors_event_t temp;
 sensors_event_t pressure;
 
 int loopCount = 0;
+int seconds = 0;
 
 void setup() {                
   Serial.begin(9600);
@@ -158,25 +159,29 @@ void loop() {
       Serial.println(errorMessageSGP);
     }
   }
-  display.clearDisplay();
-  display.setCursor(0,0);
-  display.println(DateTime.format("%A"));
-  display.println(DateTime.format("%x"));
-  display.println(DateTime.format("%X"));
-  display.printf("LPS: %.1f°C\n", temp.temperature);
-  display.printf("SCD: %.1f°C\n", temperature);
-  display.printf("%.1fhPa\n", pressure.pressure);
-  display.printf("CO2: %uppm\n", co2Concentration);
-  display.printf("%.1f%%RH\n", relativeHumidity);
-  if(conditioning_s > 0){
-    display.println("NOx: Calibrating");
-    display.println("VOC: Calibrating");
+  int tempSeconds = DateTime.getParts().getSeconds();
+  if(tempSeconds != seconds){
+    display.clearDisplay();
+    display.setCursor(0,0);
+    display.println(DateTime.format("%A"));
+    display.println(DateTime.format("%x"));
+    display.println(DateTime.format("%X"));
+    display.printf("LPS: %.1f°C\n", temp.temperature);
+    display.printf("SCD: %.1f°C\n", temperature);
+    display.printf("%.1fhPa\n", pressure.pressure);
+    display.printf("CO2: %uppm\n", co2Concentration);
+    display.printf("%.1f%%RH\n", relativeHumidity);
+    if(conditioning_s > 0){
+      display.println("NOx: Calibrating");
+      display.println("VOC: Calibrating");
+    }
+    else{
+      display.printf("NOx: %u\n", srawNox);
+      display.printf("VOC: %u\n", srawVoc);
+    }
+    display.display();
+    seconds = tempSeconds;
   }
-  else{
-    display.printf("NOx: %u\n", srawNox);
-    display.printf("VOC: %u\n", srawVoc);
-  }
-  display.display();
   loopCount++;
   loopCount = loopCount % 100;
   delay(100);
